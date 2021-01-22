@@ -1,13 +1,14 @@
-
-const EmployeeDetail = ({ name, picture }) => {
+const EmployeeDetail = props => {
     return (
-        <>
+        <> 
+        
             <p>
-                <img src={picture} alt={name} style={{ width: "50px", height: "30px" }} />
+                <img src={props.picture.thumbnail} alt={props.name.first} style={{ width: "50px", height: "30px" }} />
             </p>
-            <p>{name}</p>
+            <p>{props.name.first} {props.name.last}</p>
+
         </>
     )
-}  
+}
 
 export default EmployeeDetail;

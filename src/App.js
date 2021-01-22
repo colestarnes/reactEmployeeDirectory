@@ -1,40 +1,27 @@
 import React, { useState, useEffect } from "react"; 
-import ReactDOM from "react-dom"; 
 import axios from "axios"; 
 import EmployeeDetail from "./EmployeeDetail";
-
 function App() {
  const [employees, setEmployees] = useState([]);
  const [loading, setLoading] = useState(false);
-
 useEffect(() => {
   setLoading(true);
   axios
-  .get("https://randomuser.me/api/?results=200&nat=us")
+  .get("https://randomuser.me/api/?results=10&nat=us")
   .then(res => { 
-    console.log(res.data);
-    setEmployees(res.data);
+    console.log(res.data.results);
+    setEmployees(...res.data.results);
     setLoading(false);
   }).catch(err => {
     console.log(err);
   });
 }, []); 
 
-if(loading) {
-  return <p>Loading employees...</p>
-}
-
 return ( 
-
-  
   <div className="App"> 
-  <h1>Employee List</h1> 
-  {employees.map((employee, uuid) => (
-    <EmployeeDetail key={uuid} {...employee} />
-  ))}
+  <h1>Employee List</h1>  
+  //m
   </div>
 );
 }
-
-
 export default App;
