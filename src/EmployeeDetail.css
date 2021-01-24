@@ -1,3 +1,12 @@
-p {
-    margin-right: 0;
+.lol {
+padding-top: 10px;
+   padding-left: 200px; 
+} 
+
+.container {
+    display: flex;
+}  
+
+.text-col {
+    margin-left: 25px;
 }

@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, SearchBox } from "react";
 import axios from "axios";
 import EmployeeDetail from "./EmployeeDetail";
+import './App.css'
 function App() {
   const [employees, setEmployees] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); 
+  const [searchInput, setSearchInput] = useState('');
+  
   useEffect(() => {
     setLoading(true);
     axios
@@ -17,10 +20,15 @@ function App() {
       });
   }, []);
 
+
   return (
-    <div className="App">
-      <h1>Employee List</h1> 
-      <EmployeeDetail employees={employees}/>
+    <div className="App"> 
+     <div className="center">
+      <h1>Employee List</h1>
+      <input /> 
+      
+      <EmployeeDetail employees={employees} />
+      </div>
     </div>
   );
 }
