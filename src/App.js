@@ -23,9 +23,10 @@ function App() {
 
   return (
     <div className="App"> 
-     <div className="center doh">
+     <div className="center">
       <h1>Employee List</h1>
       <input /> 
+      
       <EmployeeDetail employees={employees} />
       </div>
     </div>
